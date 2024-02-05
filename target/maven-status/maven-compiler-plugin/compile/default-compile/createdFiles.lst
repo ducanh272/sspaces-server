@@ -1,5 +1,6 @@
 com/hukathon/openspace/config/JwtAuthenticationFilter.class
 com/hukathon/openspace/user/UserRepository.class
+com/hukathon/openspace/config/CorsConfiguration.class
 com/hukathon/openspace/auth/RegisterRequest$RegisterRequestBuilder.class
 com/hukathon/openspace/auth/AuthenticationRequest$AuthenticationRequestBuilder.class
 com/hukathon/openspace/auth/AuthenticationRequest.class
