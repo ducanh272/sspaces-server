@@ -39,8 +39,8 @@ public class AuthenticationService {
         System.out.println(request.getEmail() +  request.getPassword());
         authenticationManager.authenticate(
                 new UsernamePasswordAuthenticationToken(
-                        "ducanh@gmail.com",
-                        "1235"
+                        request.getEmail(),
+                        request.getPassword()
                 )
         );
         System.out.println(0);
