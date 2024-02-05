@@ -4,7 +4,7 @@
 /Users/buiducanh/Documents/sspaces-server/src/main/java/com/hukathon/openspace/auth/RegisterRequest.java
 /Users/buiducanh/Documents/sspaces-server/src/main/java/com/hukathon/openspace/config/JwtAuthenticationFilter.java
 /Users/buiducanh/Documents/sspaces-server/src/main/java/com/hukathon/openspace/auth/AuthenticationRequest.java
-/Users/buiducanh/Documents/sspaces-server/src/main/java/com/hukathon/openspace/config/CorsConfiguration.java
+/Users/buiducanh/Documents/sspaces-server/src/main/java/com/hukathon/openspace/config/CorsConfig.java
 /Users/buiducanh/Documents/sspaces-server/src/main/java/com/hukathon/openspace/OpenSpaceApplication.java
 /Users/buiducanh/Documents/sspaces-server/src/main/java/com/hukathon/openspace/config/ApplicationConfig.java
 /Users/buiducanh/Documents/sspaces-server/src/main/java/com/hukathon/openspace/auth/AuthenticationResponse.java

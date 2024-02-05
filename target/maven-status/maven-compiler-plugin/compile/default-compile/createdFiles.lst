@@ -1,13 +1,14 @@
 com/hukathon/openspace/config/JwtAuthenticationFilter.class
 com/hukathon/openspace/user/UserRepository.class
-com/hukathon/openspace/config/CorsConfiguration.class
 com/hukathon/openspace/auth/RegisterRequest$RegisterRequestBuilder.class
 com/hukathon/openspace/auth/AuthenticationRequest$AuthenticationRequestBuilder.class
 com/hukathon/openspace/auth/AuthenticationRequest.class
 com/hukathon/openspace/config/ApplicationConfig.class
+com/hukathon/openspace/config/CorsConfig.class
 com/hukathon/openspace/auth/AuthenticationService.class
 com/hukathon/openspace/auth/AuthenticationController.class
 com/hukathon/openspace/OpenSpaceApplication.class
+com/hukathon/openspace/OpenSpaceApplication$1.class
 com/hukathon/openspace/user/User.class
 com/hukathon/openspace/auth/AuthenticationResponse.class
 com/hukathon/openspace/user/User$UserBuilder.class
