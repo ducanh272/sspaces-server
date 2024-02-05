@@ -1,0 +1,16 @@
+com/hukathon/openspace/config/JwtAuthenticationFilter.class
+com/hukathon/openspace/user/UserRepository.class
+com/hukathon/openspace/auth/RegisterRequest$RegisterRequestBuilder.class
+com/hukathon/openspace/auth/AuthenticationRequest$AuthenticationRequestBuilder.class
+com/hukathon/openspace/auth/AuthenticationRequest.class
+com/hukathon/openspace/config/ApplicationConfig.class
+com/hukathon/openspace/auth/AuthenticationService.class
+com/hukathon/openspace/auth/AuthenticationController.class
+com/hukathon/openspace/OpenSpaceApplication.class
+com/hukathon/openspace/user/User.class
+com/hukathon/openspace/auth/AuthenticationResponse.class
+com/hukathon/openspace/user/User$UserBuilder.class
+com/hukathon/openspace/config/SecurityConfiguration.class
+com/hukathon/openspace/config/JwtService.class
+com/hukathon/openspace/auth/AuthenticationResponse$AuthenticationResponseBuilder.class
+com/hukathon/openspace/auth/RegisterRequest.class
