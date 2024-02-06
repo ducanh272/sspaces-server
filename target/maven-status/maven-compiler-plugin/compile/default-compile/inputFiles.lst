@@ -6,8 +6,9 @@
 /Users/buiducanh/Documents/sspaces-server/src/main/java/com/hukathon/openspace/auth/AuthenticationRequest.java
 /Users/buiducanh/Documents/sspaces-server/src/main/java/com/hukathon/openspace/config/CorsConfig.java
 /Users/buiducanh/Documents/sspaces-server/src/main/java/com/hukathon/openspace/OpenSpaceApplication.java
-/Users/buiducanh/Documents/sspaces-server/src/main/java/com/hukathon/openspace/config/ApplicationConfig.java
+/Users/buiducanh/Documents/sspaces-server/src/main/java/com/hukathon/openspace/user/CustomUserDetails.java
 /Users/buiducanh/Documents/sspaces-server/src/main/java/com/hukathon/openspace/auth/AuthenticationResponse.java
+/Users/buiducanh/Documents/sspaces-server/src/main/java/com/hukathon/openspace/user/CustomUserDetailsService.java
 /Users/buiducanh/Documents/sspaces-server/src/main/java/com/hukathon/openspace/config/SecurityConfiguration.java
 /Users/buiducanh/Documents/sspaces-server/src/main/java/com/hukathon/openspace/auth/AuthenticationController.java
 /Users/buiducanh/Documents/sspaces-server/src/main/java/com/hukathon/openspace/auth/AuthenticationService.java

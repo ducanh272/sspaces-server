@@ -1,5 +1,6 @@
 package com.hukathon.openspace.config;
 
+import com.hukathon.openspace.user.CustomUserDetails;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
@@ -20,7 +21,8 @@ import java.util.function.Function;
 @Service
 public class JwtService {
 
-    private static final String SECRET_KEY = "559b565b6231c9916d3ec61dddb08c22d36a23144c1b19c0bf70f6793da550bd";
+    private static final String SECRET_KEY = "413F4428472B4B6250655368566D5970337336763979244226452948404D6351";
+    public static int EXPIRED_TIME = 1000 * 60 * 24;
 
     public String extractUsername(String token) {
         return extractClaim(token, Claims::getSubject);
@@ -31,20 +33,19 @@ public class JwtService {
         return claimsResolver.apply(claims);
     }
 
-    public String generateToken(UserDetails userDetails) {
-        return generateToken(new HashMap<>(), userDetails);
+    public String generateToken(CustomUserDetails customUserDetails) {
+        return generateToken(new HashMap<>(), customUserDetails);
     }
 
     public String generateToken(
         Map<String, Object> extraClaims,
-        UserDetails userDetails
+        CustomUserDetails customUserDetails
     ) {
-        return Jwts
-                .builder()
+        return Jwts.builder()
                 .setClaims(extraClaims)
-                .setSubject(userDetails.getUsername())
+                .setSubject(customUserDetails.getUsername())
                 .setIssuedAt(new Date(System.currentTimeMillis()))
-                .setExpiration(new Date(System.currentTimeMillis() + 1000 * 60 * 24))
+                .setExpiration(new Date(System.currentTimeMillis() + EXPIRED_TIME))
                 .signWith(getSignInKey(), SignatureAlgorithm.HS256)
                 .compact();
     }

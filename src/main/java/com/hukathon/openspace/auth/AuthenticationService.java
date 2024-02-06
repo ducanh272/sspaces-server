@@ -1,8 +1,10 @@
 package com.hukathon.openspace.auth;
 
 import com.hukathon.openspace.config.JwtService;
+import com.hukathon.openspace.user.CustomUserDetails;
 import com.hukathon.openspace.user.User;
 import com.hukathon.openspace.user.UserRepository;
+import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -18,6 +20,7 @@ public class AuthenticationService {
     private final JwtService jwtService;
     private final AuthenticationManager authenticationManager;
 
+    @Transactional
     public AuthenticationResponse register(RegisterRequest request) {
         var user = User.builder()
                 .email(request.getEmail())
@@ -28,27 +31,26 @@ public class AuthenticationService {
                 .gender(request.getGender())
                 .build();
         repository.save(user);
-        var jwtToken = jwtService.generateToken(user);
+
+        CustomUserDetails customUserDetails = new CustomUserDetails(user);
+        var jwtToken = jwtService.generateToken(customUserDetails);
         return AuthenticationResponse.builder()
                 .token(jwtToken)
                 .build();
     }
 
     public AuthenticationResponse authenticate(AuthenticationRequest request) {
-        System.out.println(-1);
-        System.out.println(request.getEmail() +  request.getPassword());
         authenticationManager.authenticate(
                 new UsernamePasswordAuthenticationToken(
                         request.getEmail(),
                         request.getPassword()
                 )
         );
-        System.out.println(0);
         var user = repository.findByEmail(request.getEmail())
-                .orElseThrow();
-        System.out.println(1);
-        var jwtToken = jwtService.generateToken(user);
-        System.out.println(2);
+                .orElseThrow(() -> new IllegalArgumentException("Invalid username or password"));
+
+        CustomUserDetails customUserDetails = new CustomUserDetails(user);
+        var jwtToken = jwtService.generateToken(customUserDetails);
         return AuthenticationResponse.builder()
                 .token(jwtToken)
                 .build();
