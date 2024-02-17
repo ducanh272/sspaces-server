@@ -10,6 +10,7 @@ import java.util.function.Function;
 @Service
 @RequiredArgsConstructor
 public class PlaceMapper implements Function<Place, PlaceDto> {
+
     private final ImageMapper imageMapper;
     private final SocialMediaMapper socialMediaMapper;
 

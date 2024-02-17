@@ -4,10 +4,12 @@ import com.hukathon.openspace.dto.EventImageDto;
 import com.hukathon.openspace.dto.SocialMediaDto;
 import com.hukathon.openspace.entity.EventImage;
 import com.hukathon.openspace.entity.SocialMedia;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
+@Service
 public class SocialMediaMapper {
 
     public List<SocialMediaDto> mapToDtoList(List<SocialMedia> socialMediaList) {
