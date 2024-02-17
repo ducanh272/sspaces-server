@@ -2,6 +2,7 @@ package com.hukathon.openspace.dto;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonInclude;
+import com.hukathon.openspace.entity.Place;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -24,6 +25,8 @@ public class EventDto {
 
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date time;
+
+    private PlaceDto place;
 
     private List<EventImageDto> eventImages;
     private List<EventTagDto> eventTags;
