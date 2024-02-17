@@ -1,5 +1,9 @@
 package com.hukathon.openspace.auth;
 
+import com.hukathon.openspace.auth.AuthenticationRequest;
+import com.hukathon.openspace.auth.AuthenticationResponse;
+import com.hukathon.openspace.service.AuthenticationService;
+import com.hukathon.openspace.auth.RegisterRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
