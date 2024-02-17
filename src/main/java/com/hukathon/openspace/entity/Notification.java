@@ -25,13 +25,11 @@ public class Notification {
 
     private String content;
 
+    @Column(columnDefinition = "boolean default false")
     private boolean isRead;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "place_id")
-    private Place place;
-
-    @OneToOne(mappedBy = "eventNotification")
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "event_id")
     private Event event;
 
     @ManyToMany(mappedBy = "notifications")

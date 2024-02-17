@@ -46,8 +46,7 @@ public class Event {
     @OneToMany(mappedBy = "event", cascade = CascadeType.ALL)
     private List<EventTag> tags;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "notification_id")
+    @OneToOne(mappedBy = "event")
     private Notification eventNotification;
 
     @OneToOne(mappedBy = "event")

@@ -44,7 +44,5 @@ public class Place {
     @ManyToMany(mappedBy = "likedPlaces")
     private List<User> followers;
 
-    @OneToMany(mappedBy = "place", cascade = CascadeType.ALL)
-    private List<Notification> placeNotifications;
 
 }
