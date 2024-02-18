@@ -1,6 +1,7 @@
 package com.hukathon.openspace.auth;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
+import com.hukathon.openspace.dto.UserDto;
 import com.hukathon.openspace.entity.User;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -18,5 +19,5 @@ import java.util.Date;
 @Setter
 public class AuthenticationResponse {
     private String token;
-    private User user;
+    private UserDto userDto;
 }

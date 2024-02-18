@@ -19,7 +19,14 @@ public class UserDto {
 
     private Integer userId;
 
+    private String email;
+
     private String name;
 
+    private String phone;
+
+    private String address;
+
+    private String gender;
 
 }

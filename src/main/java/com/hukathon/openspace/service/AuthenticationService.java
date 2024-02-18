@@ -6,6 +6,7 @@ import com.hukathon.openspace.auth.RegisterRequest;
 import com.hukathon.openspace.config.JwtService;
 import com.hukathon.openspace.dto.CustomUserDetails;
 import com.hukathon.openspace.entity.User;
+import com.hukathon.openspace.mapper.UserDtoMapper;
 import com.hukathon.openspace.repository.UserRepository;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
@@ -22,6 +23,7 @@ public class AuthenticationService {
     private final PasswordEncoder passwordEncoder;
     private final JwtService jwtService;
     private final AuthenticationManager authenticationManager;
+    private final UserDtoMapper userDtoMapper;
 
     @Transactional
     public AuthenticationResponse register(RegisterRequest request) {
@@ -56,7 +58,7 @@ public class AuthenticationService {
         var jwtToken = jwtService.generateToken(customUserDetails);
         return AuthenticationResponse.builder()
                 .token(jwtToken)
-                .user(user)
+                .userDto(userDtoMapper.apply(user))
                 .build();
     }
 }

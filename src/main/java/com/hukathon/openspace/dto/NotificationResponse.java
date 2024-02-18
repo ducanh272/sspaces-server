@@ -20,5 +20,4 @@ public class NotificationResponse {
     private EventDto event;
     private UserDto sender;
 
-
 }

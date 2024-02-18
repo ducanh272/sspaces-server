@@ -20,13 +20,13 @@ public class NotificationController {
     private final NotificationRepository notificationRepository;
     private final NotificationMapper notificationMapper;
 
-//    @GetMapping("/users/{userId}/notifications")
-//    public List<NotificationResponse> getAllNotifications(
-//            @PathVariable Integer userId
-//    ) {
-//        return notificationRepository.findNotificationByUserId(userId)
-//                .stream()
-//                .map(notificationMapper)
-//                .collect(Collectors.toList());
-//    }
+    @GetMapping("/users/{userId}/notifications")
+    public List<NotificationResponse> getAllNotifications(
+            @PathVariable Integer userId
+    ) {
+        return notificationRepository.findNotificationByUserId(userId)
+                .stream()
+                .map(notificationMapper)
+                .collect(Collectors.toList());
+    }
 }

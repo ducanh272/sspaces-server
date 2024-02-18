@@ -1,5 +1,8 @@
 package com.hukathon.openspace.entity;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -14,6 +17,9 @@ import java.util.List;
 @AllArgsConstructor
 @Entity
 @Table(name = "users")
+@JsonIdentityInfo(
+        generator = ObjectIdGenerators.PropertyGenerator.class,
+        property = "id")
 public class User {
 
     @Id
@@ -57,5 +63,8 @@ public class User {
             inverseJoinColumns = @JoinColumn(name = "notification_id")
     )
     private List<Notification> notifications;
+
+    @OneToOne(mappedBy = "sender")
+    private Notification senderNotification;
 }
 

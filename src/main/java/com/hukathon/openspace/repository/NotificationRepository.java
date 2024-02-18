@@ -9,6 +9,6 @@ import java.util.List;
 
 @Repository
 public interface NotificationRepository extends JpaRepository<Notification, Integer> {
-    @Query("SELECT n FROM Notification n join n.sender")
+    @Query("SELECT distinct n FROM Notification n join n.receivers r where r.id = ?1")
     List<Notification> findNotificationByUserId(Integer userId);
 }
