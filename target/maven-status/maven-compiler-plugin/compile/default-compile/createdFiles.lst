@@ -17,6 +17,7 @@ com/hukathon/openspace/dto/UserDto.class
 com/hukathon/openspace/mapper/EventTagMapper.class
 com/hukathon/openspace/mapper/UserDtoMapper.class
 com/hukathon/openspace/service/EventService.class
+com/hukathon/openspace/dto/UserEmail$UserEmailBuilder.class
 com/hukathon/openspace/dto/UserFriendResponse$UserFriendResponseBuilderImpl.class
 com/hukathon/openspace/controller/UserFriendController.class
 com/hukathon/openspace/dto/UserDto$UserDtoBuilderImpl.class
@@ -24,6 +25,7 @@ com/hukathon/openspace/dto/UserFriendResponse.class
 com/hukathon/openspace/entity/Map.class
 com/hukathon/openspace/mapper/ImageMapper.class
 com/hukathon/openspace/repository/EventRepository.class
+com/hukathon/openspace/dto/UserEmail.class
 com/hukathon/openspace/entity/Message.class
 com/hukathon/openspace/entity/Notification.class
 com/hukathon/openspace/entity/BoxChat$BoxChatBuilder.class
@@ -31,6 +33,7 @@ com/hukathon/openspace/dto/UserFriendRequest$UserFriendRequestBuilder.class
 com/hukathon/openspace/controller/EventController.class
 com/hukathon/openspace/entity/Message$MessageBuilder.class
 com/hukathon/openspace/mapper/NotificationMapper.class
+com/hukathon/openspace/dto/UserEmail$UserEmailBuilderImpl.class
 com/hukathon/openspace/mapper/EventImageMapper.class
 com/hukathon/openspace/service/BoxChatService.class
 com/hukathon/openspace/dto/UserFriendRequest$UserFriendRequestBuilderImpl.class

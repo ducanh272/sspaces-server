@@ -1,14 +1,11 @@
-package com.hukathon.openspace.auth;
+package com.hukathon.openspace.dto;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
-import com.hukathon.openspace.entity.User;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.experimental.SuperBuilder;
-
-import java.util.Date;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @SuperBuilder
@@ -16,7 +13,6 @@ import java.util.Date;
 @AllArgsConstructor
 @Getter
 @Setter
-public class AuthenticationResponse {
-    private String token;
-    private User user;
+public class UserEmail {
+    private String email;
 }

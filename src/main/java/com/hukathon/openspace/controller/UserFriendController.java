@@ -1,7 +1,10 @@
 package com.hukathon.openspace.controller;
 
+import com.hukathon.openspace.dto.UserEmail;
 import com.hukathon.openspace.dto.UserFriendRequest;
 import com.hukathon.openspace.dto.UserFriendResponse;
+import com.hukathon.openspace.entity.User;
+import com.hukathon.openspace.service.CustomUserDetailsService;
 import com.hukathon.openspace.service.UserFriendService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -14,6 +17,14 @@ import java.util.List;
 @RequestMapping("/users")
 public class UserFriendController {
     private final UserFriendService userFriendService;
+    private final CustomUserDetailsService customUserDetailsService;
+
+    @GetMapping("/getUserByEmail")
+    public ResponseEntity<User> getUserByEmail(
+            @RequestBody UserEmail userEmail
+    ) {
+        return ResponseEntity.ok(customUserDetailsService.findByEmail(userEmail.getEmail()));
+    }
 
     @PostMapping("/requestFriend")
     public ResponseEntity<UserFriendResponse> makeFriendRequest(

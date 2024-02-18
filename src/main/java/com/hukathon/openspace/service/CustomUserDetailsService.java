@@ -1,6 +1,8 @@
 package com.hukathon.openspace.service;
 
+import com.hukathon.openspace.dto.UserEmail;
 import com.hukathon.openspace.entity.User;
+import com.hukathon.openspace.exception.NotFoundException;
 import com.hukathon.openspace.repository.UserRepository;
 import com.hukathon.openspace.dto.CustomUserDetails;
 import lombok.RequiredArgsConstructor;
@@ -23,5 +25,10 @@ public class CustomUserDetailsService implements UserDetailsService {
             throw new UsernameNotFoundException("User not found");
         }
         return new CustomUserDetails(user);
+    }
+
+    public User findByEmail(String email) throws NotFoundException {
+        return userRepository.findByEmail(email)
+                .orElseThrow(() -> new NotFoundException("User not found"));
     }
 }

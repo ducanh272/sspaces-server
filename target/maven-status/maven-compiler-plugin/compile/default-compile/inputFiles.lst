@@ -62,6 +62,7 @@
 /Users/buiducanh/Documents/sspaces-server/src/main/java/com/hukathon/openspace/config/JwtAuthenticationFilter.java
 /Users/buiducanh/Documents/sspaces-server/src/main/java/com/hukathon/openspace/dto/NotificationResponse.java
 /Users/buiducanh/Documents/sspaces-server/src/main/java/com/hukathon/openspace/repository/SocialMediaRepository.java
+/Users/buiducanh/Documents/sspaces-server/src/main/java/com/hukathon/openspace/dto/UserEmail.java
 /Users/buiducanh/Documents/sspaces-server/src/main/java/com/hukathon/openspace/dto/RegistrationLinkDto.java
 /Users/buiducanh/Documents/sspaces-server/src/main/java/com/hukathon/openspace/entity/UserFriend.java
 /Users/buiducanh/Documents/sspaces-server/src/main/java/com/hukathon/openspace/mapper/EventMapper.java
