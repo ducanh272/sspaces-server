@@ -1,3 +1,4 @@
+com/hukathon/openspace/dto/NotificationIdDto$NotificationIdDtoBuilder.class
 com/hukathon/openspace/repository/NotificationRepository.class
 com/hukathon/openspace/dto/UserDto$UserDtoBuilder.class
 com/hukathon/openspace/enums/FriendStatus.class
@@ -36,6 +37,7 @@ com/hukathon/openspace/mapper/NotificationMapper.class
 com/hukathon/openspace/dto/UserEmail$UserEmailBuilderImpl.class
 com/hukathon/openspace/mapper/EventImageMapper.class
 com/hukathon/openspace/service/BoxChatService.class
+com/hukathon/openspace/dto/NotificationIdDto$NotificationIdDtoBuilderImpl.class
 com/hukathon/openspace/dto/UserFriendRequest$UserFriendRequestBuilderImpl.class
 com/hukathon/openspace/dto/NotificationResponse$NotificationResponseBuilder.class
 com/hukathon/openspace/entity/Notification$NotificationBuilder.class
@@ -44,4 +46,5 @@ com/hukathon/openspace/entity/BoxChat.class
 com/hukathon/openspace/mapper/RegistrationLinkMapper.class
 com/hukathon/openspace/entity/UserFriend.class
 com/hukathon/openspace/controller/BoxChatController.class
+com/hukathon/openspace/dto/NotificationIdDto.class
 com/hukathon/openspace/entity/UserFriend$UserFriendBuilder.class
