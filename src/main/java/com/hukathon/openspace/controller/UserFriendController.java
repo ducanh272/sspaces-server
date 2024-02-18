@@ -19,7 +19,7 @@ public class UserFriendController {
     private final UserFriendService userFriendService;
     private final CustomUserDetailsService customUserDetailsService;
 
-    @GetMapping("/getUserByEmail")
+    @PostMapping("/getUserByEmail")
     public ResponseEntity<User> getUserByEmail(
             @RequestBody UserEmail userEmail
     ) {
