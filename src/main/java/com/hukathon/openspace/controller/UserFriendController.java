@@ -38,6 +38,7 @@ public class UserFriendController {
     public ResponseEntity<List<UserFriendResponse>> getPendingRequest(
             @PathVariable Integer userId
     ) {
+        System.out.println(userId);
         return ResponseEntity.ok(userFriendService.getPendingRequest(userId));
     }
 
