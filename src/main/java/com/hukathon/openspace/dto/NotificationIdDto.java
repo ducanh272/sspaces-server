@@ -15,4 +15,5 @@ import lombok.experimental.SuperBuilder;
 @Setter
 public class NotificationIdDto {
     private Integer notificationId;
+    private Integer userId;
 }

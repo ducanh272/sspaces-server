@@ -53,18 +53,13 @@ public class User {
             inverseJoinColumns = @JoinColumn(name = "box_chat_id"))
     private List<BoxChat> joinedChats;
 
+    @OneToMany(mappedBy = "user")
+    private List<NotificationStatus> notificationStatuses;
+
     @OneToMany(mappedBy = "sender", cascade = CascadeType.ALL)
     private List<Message> userMessages;
 
-    @ManyToMany
-    @JoinTable(
-            name = "user_notifications",
-            joinColumns = @JoinColumn(name = "user_id"),
-            inverseJoinColumns = @JoinColumn(name = "notification_id")
-    )
-    private List<Notification> notifications;
-
-    @OneToOne(mappedBy = "sender")
-    private Notification senderNotification;
+    @OneToMany(mappedBy = "sender", cascade = CascadeType.ALL)
+    private List<Notification> senderNotification;
 }
 

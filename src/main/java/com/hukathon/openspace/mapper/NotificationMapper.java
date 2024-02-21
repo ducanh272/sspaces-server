@@ -19,7 +19,6 @@ public class NotificationMapper implements Function<Notification, NotificationRe
                 notification.getId(),
                 notification.getTitle(),
                 notification.getContent(),
-                notification.isRead(),
                 eventMapper.apply(notification.getEvent()),
                 userDtoMapper.apply(notification.getSender())
         );

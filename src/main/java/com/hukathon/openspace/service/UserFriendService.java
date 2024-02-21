@@ -1,11 +1,14 @@
 package com.hukathon.openspace.service;
 
+import com.hukathon.openspace.dto.UserDto;
+import com.hukathon.openspace.dto.UserFriendId;
 import com.hukathon.openspace.dto.UserFriendRequest;
 import com.hukathon.openspace.dto.UserFriendResponse;
 import com.hukathon.openspace.entity.User;
 import com.hukathon.openspace.entity.UserFriend;
 import com.hukathon.openspace.enums.FriendStatus;
 import com.hukathon.openspace.exception.NotFoundException;
+import com.hukathon.openspace.mapper.UserDtoMapper;
 import com.hukathon.openspace.mapper.UserFriendMapper;
 import com.hukathon.openspace.repository.UserFriendRepository;
 import com.hukathon.openspace.repository.UserRepository;
@@ -13,6 +16,7 @@ import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -22,6 +26,7 @@ public class UserFriendService {
     private final UserFriendRepository userFriendRepository;
     private final UserRepository userRepository;
     private final UserFriendMapper userFriendMapper;
+
 
     @Transactional
     public UserFriendResponse makeFriendRequest(UserFriendRequest friendRequest) {
@@ -58,11 +63,10 @@ public class UserFriendService {
                 .collect(Collectors.toList());
     }
 
-    public UserFriendResponse approveRequest(Integer userId, Integer userFriendId) {
-        UserFriend friendRequest = userFriendRepository.getAReQuest(userId, userFriendId);
-
+    public UserFriendResponse approveRequest(Integer userId, UserFriendId userFriendId) {
+        UserFriend friendRequest = userFriendRepository.getAReQuest(userId, userFriendId.getUserFriendId());
         friendRequest.setFriendStatus(FriendStatus.FRIEND);
-        userFriendRepository.saveAndFlush(friendRequest);
+        userFriendRepository.save(friendRequest);
 
         return userFriendMapper.apply(friendRequest);
     }
@@ -72,10 +76,14 @@ public class UserFriendService {
         userFriendRepository.delete(friendRequest);
     }
 
-    public List<UserFriendResponse> getFriendList(Integer userId) {
-        return userFriendRepository.getFriendList(userId)
-                .stream()
-                .map(userFriendMapper)
-                .collect(Collectors.toList());
+    public List<User> getFriendList(Integer userId) {
+        List<User> list1 = userFriendRepository.getFriendList1(userId);
+        List<User> list2 = userFriendRepository.getFriendList2(userId);
+        List<User> allFriend = new ArrayList<>();
+        allFriend.addAll(list1);
+        allFriend.addAll(list2);
+
+        return allFriend;
+
     }
 }

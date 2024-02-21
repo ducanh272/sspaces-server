@@ -26,7 +26,6 @@ public class EventDto {
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date time;
 
-    private PlaceDto place;
 
     private List<EventImageDto> eventImages;
     private List<EventTagDto> eventTags;

@@ -48,6 +48,9 @@ public class SecurityConfiguration {
                     cors.configurationSource(source);
                 })
                 .authorizeHttpRequests(auth -> auth.requestMatchers(
+                        new AntPathRequestMatcher("/search"),
+                        new AntPathRequestMatcher("/stream-flux"),
+                                new AntPathRequestMatcher("/stream-sse"),
                             new AntPathRequestMatcher("/auth/**"),
                             new AntPathRequestMatcher("/places/**"),
                             new AntPathRequestMatcher("/events/**")

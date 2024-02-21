@@ -31,17 +31,14 @@ public class Notification {
 
     private String content;
 
-    @Column(columnDefinition = "boolean default false")
-    private boolean isRead;
+    @OneToMany(mappedBy = "notification", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<NotificationStatus> notificationStatuses;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "event_id")
     private Event event;
 
-    @ManyToMany(mappedBy = "notifications")
-    private List<User> receivers;
-
-    @OneToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "sender_id")
     private User sender;
 

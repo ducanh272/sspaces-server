@@ -46,11 +46,14 @@ public class Event {
     @OneToMany(mappedBy = "event", cascade = CascadeType.ALL)
     private List<EventTag> tags;
 
-    @OneToOne(mappedBy = "event")
-    private Notification eventNotification;
+    @OneToMany(mappedBy = "event", cascade = CascadeType.ALL)
+    private List<Notification> eventNotification;
 
     @OneToOne(mappedBy = "event")
     private BoxChat boxChat;
+
+    @OneToMany(mappedBy = "event")
+    private List<UserEventStatus> userEventStatuses;
 
 }
 

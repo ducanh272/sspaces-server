@@ -17,7 +17,6 @@ public class NotificationResponse {
     private Integer notificationId;
     private String title;
     private String content;
-    private boolean isRead;
     private EventDto event;
     private UserDto sender;
 

@@ -1,9 +1,8 @@
 package com.hukathon.openspace.controller;
 
-import com.hukathon.openspace.dto.UserEmail;
-import com.hukathon.openspace.dto.UserFriendRequest;
-import com.hukathon.openspace.dto.UserFriendResponse;
+import com.hukathon.openspace.dto.*;
 import com.hukathon.openspace.entity.User;
+import com.hukathon.openspace.mapper.UserDtoMapper;
 import com.hukathon.openspace.service.CustomUserDetailsService;
 import com.hukathon.openspace.service.UserFriendService;
 import lombok.RequiredArgsConstructor;
@@ -11,6 +10,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @RestController
 @RequiredArgsConstructor
@@ -18,6 +18,7 @@ import java.util.List;
 public class UserFriendController {
     private final UserFriendService userFriendService;
     private final CustomUserDetailsService customUserDetailsService;
+    private final UserDtoMapper userDtoMapper;
 
     @PostMapping("/getUserByEmail")
     public ResponseEntity<User> getUserByEmail(
@@ -45,8 +46,8 @@ public class UserFriendController {
     @PostMapping("{userId}/pendingRequest")
     public ResponseEntity<UserFriendResponse> approveRequest(
             @PathVariable Integer userId,
-            @RequestParam Integer userFriendId
-    ) {
+            @RequestBody UserFriendId userFriendId
+            ) {
         return ResponseEntity.ok(userFriendService.approveRequest(userId, userFriendId));
     }
 
@@ -59,10 +60,13 @@ public class UserFriendController {
     }
 
     @GetMapping("/{userId}/friendList")
-    public ResponseEntity<List<UserFriendResponse>> getFriendList(
+    public ResponseEntity<List<UserDto>> getFriendList(
             @PathVariable Integer userId
     ) {
-        return ResponseEntity.ok(userFriendService.getFriendList(userId));
+        return ResponseEntity.ok(userFriendService.getFriendList(userId)
+                .stream()
+                .map(userDtoMapper)
+                .collect(Collectors.toList()));
     }
 
 }

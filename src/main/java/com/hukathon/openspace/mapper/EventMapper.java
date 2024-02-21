@@ -26,7 +26,6 @@ public class EventMapper implements Function<Event, EventDto> {
                 event.getName(),
                 event.getDescription(),
                 event.getTime(),
-                placeMapper.apply(event.getPlace()),
                 eventImageMapper.mapToDtoList(event.getImages()),
                 eventTagMapper.mapToDtoList(event.getTags()),
                 registrationLinkMapper.mapToDtoList(event.getLinks())

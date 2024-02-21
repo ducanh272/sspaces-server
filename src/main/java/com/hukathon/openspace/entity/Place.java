@@ -44,5 +44,6 @@ public class Place {
     @ManyToMany(mappedBy = "likedPlaces")
     private List<User> followers;
 
-
+    @OneToMany(mappedBy = "place")
+    private List<UserPlaceRating> ratings;
 }
